@@ -1,5 +1,5 @@
 //creation du jeu
-var game = new Phaser.Game(800, 1024, Phaser.AUTO, "AscenseurDuPrix", { preload: preload, create: create });
+var game = new Phaser.Game(1536, 2048, Phaser.AUTO, "AscenseurDuPrix", { preload: preload, create: create });
 
 //ici les fichiers du jeu (image, son etc..) sont préchargés
 function preload() {
