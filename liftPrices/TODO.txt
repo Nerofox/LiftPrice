@@ -1,0 +1,24 @@
+1- CELINE
+- Création éléments graphiques (coeur pour les vies ,numéro d'étage ,ascenseur plus mur, intérieur d'ascenseur, porte, bouton plus et moins).
+- Mise en place des éléments (porte devant le produit, texte etc).
+
+2- VALENTIN
+lift.js :
+	- function createLift() : crée l'ascenseur
+	- function doorLift(Boolean) : vraix ouvre les portes, faux ferme les portes
+	- function upFloor() : change d'étage
+	- function up() : Bouton plus de l'ascenseur
+	- function down() : Bouton moins de l'ascenseur
+
+3- CELINE
+product.js :
+	- function getRandProduct() : stock un produit aléatoire
+	- function checkPrice(String) : param "+" ou "-", compare le prix réel au faux prix au param "+" ou "-"
+	- function displayProduct(Boolean) : affiche ou pas le produit selectionné
+
+4- VALENTIN
+game.js :
+	- function winFloor() : quand on gagne sur l'étage
+	- function looseFloor()	: quand on perd
+	- function gameWin() : gagne la partie et indique a idol qu'on a gagné un prix
+	- function gameLoose() : perd la partie
