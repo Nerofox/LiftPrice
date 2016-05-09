@@ -1,13 +1,13 @@
 1- CELINE
 - Création éléments graphiques (coeur pour les vies ,numéro d'étage ,ascenseur plus mur, intérieur d'ascenseur, porte, bouton plus et moins).
-- Mise en place des éléments (porte devant le produit, texte etc).
-- Creation des evenements
 
 2- VALENTIN
 lift.js :
-	- function createLift() : crée l'ascenseur
-	- function doorLift(Boolean) : vraix ouvre les portes, faux ferme les portes
-	- function upFloor() : change d'étage
+	- Mise en place des éléments (porte devant le produit, texte etc).
+	- Creation des evenements
+	x function createLift() : crée l'ascenseur
+	x function doorLift(Boolean) : vraix ouvre les portes, faux ferme les portes
+	x function upFloor() : change d'étage
 	- function up() : Bouton plus de l'ascenseur
 	- function down() : Bouton moins de l'ascenseur
 
