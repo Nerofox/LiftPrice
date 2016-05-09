@@ -1,6 +1,7 @@
 1- CELINE
 - Création éléments graphiques (coeur pour les vies ,numéro d'étage ,ascenseur plus mur, intérieur d'ascenseur, porte, bouton plus et moins).
 - Mise en place des éléments (porte devant le produit, texte etc).
+- Creation des evenements
 
 2- VALENTIN
 lift.js :
