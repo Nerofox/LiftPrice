@@ -14,6 +14,8 @@ function preload() {
 	game.load.image("inSide", "param/img/lift/inSide.png");
 	game.load.image("leftDoor", "param/img/lift/leftDoor.png");
 	game.load.image("rightDoor", "param/img/lift/rightDoor.png");
+	game.load.atlas("buttonMore", "param/img/lift/buttonMore.png", "js/spriteConf/buttonMore.json");
+	game.load.atlas("buttonLess", "param/img/lift/buttonLess.png", "js/spriteConf/buttonLess.json");
 }
 
 //dans cette section on effectue la création des objets su jeu nommé sprite (bouton, produit)

@@ -2,6 +2,8 @@ var outSide; var tempOutSide;
 var inSide; var tempInSide;
 var leftDoor; var tempLeftDoor;
 var rightDoor; var tempRightDoor;
+var buttonMore; var tempButtonMore;
+var buttonLess; var buttonLess;
 
 var limitXLeft = 314;
 var limitXRight = 743;
@@ -19,6 +21,15 @@ function createLift() {
 	game.physics.enable(rightDoor, Phaser.Physics.ARCADE);
 	outSide = game.add.sprite(0,0, "outSide");
 	game.physics.enable(outSide, Phaser.Physics.ARCADE);
+	//button
+	buttonMore = game.add.sprite(1387, 850, "buttonMore");
+	game.physics.enable(buttonMore, Phaser.Physics.ARCADE);
+	buttonLess = game.add.sprite(1387, 1000, "buttonLess");
+	game.physics.enable(buttonLess, Phaser.Physics.ARCADE);
+	buttonMore.animations.add("buttonMoreAnim", [0,1,2,1,0]);
+	buttonMore.animations.play("buttonMoreAnim",5,true);
+	buttonLess.animations.add("buttonLessAnim", [0,1,2,1,0]);
+	buttonLess.animations.play("buttonLessAnim",5,true);
 }
 
 function updateLift() {
