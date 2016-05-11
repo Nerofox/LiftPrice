@@ -3,13 +3,24 @@ var targetFloor;
 
 var scoreText;
 
+/*
+ * Met en place le nombre d'étage max a parcourir
+ */
 function setTargetFloor(nb) {
 	targetFloor = nb;
 }
+
+/*
+ * Ajoute un étage parcouru au score
+ */
 function addFloor() {
 	currentFloor += 1;
 }
 
+/*
+ * Active/Desactive l'affichage du score d'étage
+ * @param bool : 
+ */
 function displayFloor(bool) {
 	if (bool) {
 		if (scoreText != null)

@@ -35,6 +35,24 @@ function createLift(paramXY) {
 	buttonMore.animations.play("buttonMoreAnim",5,true);
 	buttonLess.animations.add("buttonLessAnim", [0,1,2,1,0]);
 	buttonLess.animations.play("buttonLessAnim",5,true);
+	buttonLess.inputEnabled = true;
+	buttonMore.inputEnabled = true;
+}
+
+/**
+ * Met en place l'évènement click sur le bouton moins
+ * @param listener : Fonction appellée pour l'évènement
+ */
+function setEventClickButtonLess(listener) {
+	buttonLess.events.onInputDown.add(listener);
+}
+
+/**
+ * Met en place l'évènement click sur le bouton plus
+ * @param listener : Fonction appellée pour l'évènement
+ */
+function setEventClickButtonMore(listener) {
+	buttonMore.events.onInputDown.add(listener);
 }
 
 function updateLift() {

@@ -1,21 +1,38 @@
 
+/**
+ * Fonction de lancement de la création du jeu
+ */
 function createGame() {
-	game.input.onTap.add(test);
-
+	//game.input.onTap.add(test);
+	//PLACEMENT DE LASCENSEUR
 	var paramLift = [314,443,314,443,743,443,0,0,1387,850,1387,1000];
 	createLift(paramLift);
+
 
 	setTargetFloor(5);
 
 	doorLift(true);
 	displayFloor(true);
+
+	//MISE EN PLACE DES EVENEMENTS DES BOUTONS
+	setEventClickButtonLess(onClickLess);
+	setEventClickButtonMore(onClickMore);
 }
 
-//fonction appellée à chaque frame du jeu (environ 30 fois par secondes) ici on detecte les évènements utilisateur
-//(clic de souris par exemple)
-function update() {
-	
+/*
+ * Declenché quand le bouton moins est cliqué
+ */
+function onClickLess() {
+	alert("less");
 }
+
+/*
+ * Declenché quand le bouton plus est cliqué
+ */
+function onClickMore() {
+	alert("more");
+}
+
 
 //UTILISER A FIN DE TEST A SUPPRIMER
 var testParam = true;
