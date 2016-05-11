@@ -3,7 +3,7 @@ var inSide; var tempInSide;
 var leftDoor; var tempLeftDoor;
 var rightDoor; var tempRightDoor;
 var buttonMore; var tempButtonMore;
-var buttonLess; var buttonLess;
+var buttonLess; var tempButtonLess;
 
 var limitXLeft = 314;
 var limitXRight = 743;
@@ -12,19 +12,24 @@ var speedUpFloor = 1500;
 var lastParam; //0 - fermeture, 1 - ouverture, 2 - changement étage
 var finishFunction; //fonction a apppeler a l'extérieur
 
-function createLift() {
-	inSide = game.add.sprite(314,443,"inSide");
+/**
+ * Creation des elements de l'ascenseur
+ * @param paramXY : Tableau des coordonnées des éléments
+ */
+function createLift(paramXY) {
+	//lift
+	inSide = game.add.sprite(paramXY[0],paramXY[1],"inSide");
 	game.physics.enable(inSide, Phaser.Physics.ARCADE);
-	leftDoor = game.add.sprite(314,443,"leftDoor");
+	leftDoor = game.add.sprite(paramXY[2],paramXY[3],"leftDoor");
 	game.physics.enable(leftDoor, Phaser.Physics.ARCADE);
-	rightDoor = game.add.sprite(743,443,"rightDoor");
+	rightDoor = game.add.sprite(paramXY[4],paramXY[5],"rightDoor");
 	game.physics.enable(rightDoor, Phaser.Physics.ARCADE);
-	outSide = game.add.sprite(0,0, "outSide");
+	outSide = game.add.sprite(paramXY[6],paramXY[7], "outSide");
 	game.physics.enable(outSide, Phaser.Physics.ARCADE);
 	//button
-	buttonMore = game.add.sprite(1387, 850, "buttonMore");
+	buttonMore = game.add.sprite(paramXY[8], paramXY[9], "buttonMore");
 	game.physics.enable(buttonMore, Phaser.Physics.ARCADE);
-	buttonLess = game.add.sprite(1387, 1000, "buttonLess");
+	buttonLess = game.add.sprite(paramXY[10], paramXY[11], "buttonLess");
 	game.physics.enable(buttonLess, Phaser.Physics.ARCADE);
 	buttonMore.animations.add("buttonMoreAnim", [0,1,2,1,0]);
 	buttonMore.animations.play("buttonMoreAnim",5,true);
@@ -50,18 +55,23 @@ function updateLift() {
 		//appel fonction si demandée
 		if (rightDoor.body.x <= limitXRight && leftDoor.body.x >= limitXLeft && finishFunction != null)
 			finishFunction();
-	} else if (lastParam == 2) { //arrêt de l'ascenseur une fois atteint la valeur la plus haute
+	//gestion d'arrêt d'étage arrêt de l'ascenseur une fois atteint la valeur la plus haute
+	} else if (lastParam == 2) { 
 		if (outSide.body.y >= 0) {
 			//arrêt des éléments
 			outSide.body.velocity.y = 0;
 			inSide.body.velocity.y = 0;
 			leftDoor.body.velocity.y = 0;
 			rightDoor.body.velocity.y = 0;
+			buttonMore.body.velocity.y = 0;
+			buttonLess.body.velocity.y = 0;
 			//destruction des anciens éléments
 			tempOutSide.destroy();
 			tempInSide.destroy();
 			tempLeftDoor.destroy();
 			tempRightDoor.destroy();
+			tempButtonLess.destroy();
+			tempButtonMore.destroy();
 			lastParam = null;
 			//sortie
 			if (finishFunction != null)
@@ -81,24 +91,24 @@ function upFloor(functionCall = null) {
 	tempInSide = inSide;
 	tempLeftDoor = leftDoor;
 	tempRightDoor = rightDoor;
+	tempButtonLess = buttonLess;
+	tempButtonMore = buttonMore;
 	//recréation
-	inSide = game.add.sprite(314,-1608,"inSide");
-	game.physics.enable(inSide, Phaser.Physics.ARCADE);
-	leftDoor = game.add.sprite(314,-1608,"leftDoor");
-	game.physics.enable(leftDoor, Phaser.Physics.ARCADE);
-	rightDoor = game.add.sprite(743,-1608,"rightDoor");
-	game.physics.enable(rightDoor, Phaser.Physics.ARCADE);
-	outSide = game.add.sprite(0,-2050, "outSide");
-	game.physics.enable(outSide, Phaser.Physics.ARCADE);
+	var paramLift = [314,-1608,314,-1608,743,-1608,0,-2050,1387,-1200,1387,-1050];
+	createLift(paramLift);
 	//deplacement des éléments vers le haut
 	tempOutSide.body.velocity.y = speedUpFloor;
 	tempInSide.body.velocity.y = speedUpFloor;
 	tempLeftDoor.body.velocity.y = speedUpFloor;
 	tempRightDoor.body.velocity.y = speedUpFloor;
+	tempButtonMore.body.velocity.y = speedUpFloor;
+	tempButtonLess.body.velocity.y = speedUpFloor;
 	outSide.body.velocity.y = speedUpFloor;
 	inSide.body.velocity.y = speedUpFloor;
 	leftDoor.body.velocity.y = speedUpFloor;
 	rightDoor.body.velocity.y = speedUpFloor;
+	buttonLess.body.velocity.y = speedUpFloor;
+	buttonMore.body.velocity.y = speedUpFloor;
 	lastParam = 2;
 }
 

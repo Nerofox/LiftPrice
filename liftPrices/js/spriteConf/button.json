@@ -1,14 +1,14 @@
 {"frames": [
 	{
-		"name": "more1",
+		"name": "button1",
 		"frame": {"x":0,"y":0,"w":121,"h":111}
 	},
 	{
-		"name": "more2",
+		"name": "button2",
 		"frame": {"x":121,"y":0,"w":121,"h":111}
 	},
 	{
-		"name": "more3",
+		"name": "button3",
 		"frame": {"x":242,"y":0,"w":121,"h":111}
 	}
 ]}
