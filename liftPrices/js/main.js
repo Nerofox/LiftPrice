@@ -20,8 +20,6 @@ function preload() {
 
 //dans cette section on effectue la création des objets su jeu nommé sprite (bouton, produit)
 function create() {
-	var paramLift = [314,443,314,443,743,443,0,0,1387,850,1387,1000];
-	createLift(paramLift);
 	createGame();
 }
 

@@ -7,7 +7,7 @@ var buttonLess; var tempButtonLess;
 
 var limitXLeft = 314;
 var limitXRight = 743;
-var speedUpFloor = 1500;
+var speedUpFloor = 1000;
 
 var lastParam; //0 - fermeture, 1 - ouverture, 2 - changement étage
 var finishFunction; //fonction a apppeler a l'extérieur
