@@ -1,4 +1,4 @@
-1- CELINE
+﻿1- CELINE
 - Création éléments graphiques (coeur pour les vies ,numéro d'étage ,ascenseur plus mur, intérieur d'ascenseur, porte, bouton plus et moins).
 
 2- VALENTIN
@@ -16,6 +16,10 @@ product.js :
 	- function getRandProduct() : stock un produit aléatoire
 	- function checkPrice(String) : param "+" ou "-", compare le prix réel au faux prix au param "+" ou "-"
 	- function displayProduct(Boolean) : affiche ou pas le produit selectionné
+
+	creer des exemples de produits dans le data.js.
+	faire les fonctions dans product.js ( placement de l'objet dans le jeu, et affichage du prix)
+	tester en utilisant le fichier game.js avec le createGame.
 
 4- VALENTIN
 game.js :

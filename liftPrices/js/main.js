@@ -13,6 +13,11 @@ function preload() {
 	game.load.image("inSide", "param/img/lift/inSide.png");
 	game.load.image("leftDoor", "param/img/lift/leftDoor.png");
 	game.load.image("rightDoor", "param/img/lift/rightDoor.png");
+    game.load.image("displayProduct","param/img/product/coca.png");
+    game.load.image("displayProduct","param/img/product/fraise.png");
+    game.load.image("displayProduct","param/img/product/lait.png");
+    game.load.image("displayProduct","param/img/product/pain.png"),
+ 
 	//------------IMAGE DE BASE DES BOUTONS--------------
 	game.load.atlas("buttonMore", "param/img/lift/buttonMore.png", "js/spriteConf/button.json");
 	game.load.atlas("buttonLess", "param/img/lift/buttonLess.png", "js/spriteConf/button.json");
