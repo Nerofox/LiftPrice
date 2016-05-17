@@ -17,6 +17,8 @@ function createGame() {
 	//MISE EN PLACE DES EVENEMENTS DES BOUTONS
 	setEventClickButtonLess(onClickLess);
 	setEventClickButtonMore(onClickMore);
+	
+	randomProduct();
 }
 
 /*
