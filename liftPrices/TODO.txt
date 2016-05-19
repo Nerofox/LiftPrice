@@ -21,6 +21,16 @@ product.js :
 	faire les fonctions dans product.js ( placement de l'objet dans le jeu, et affichage du prix)
 	tester en utilisant le fichier game.js avec le createGame.
 
+
+	retailler les photos
+	placer image dans acsenseur
+	nom produit au dessus de la photo
+	photo
+	prix estimé:2€
+	ce produit vaut il plus ou moins?
+	checkprice fonctionnel
+	
+
 4- VALENTIN
 game.js :
 	- function winFloor() : quand on gagne sur l'étage
