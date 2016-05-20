@@ -1,5 +1,5 @@
 ﻿1- CELINE
-- Création éléments graphiques (coeur pour les vies ,numéro d'étage ,ascenseur plus mur, intérieur d'ascenseur, porte, bouton plus et moins).
+	x Création éléments graphiques (coeur pour les vies ,numéro d'étage ,ascenseur plus mur, intérieur d'ascenseur, porte, bouton plus et moins).
 
 2- VALENTIN
 lift.js :
@@ -13,22 +13,21 @@ lift.js :
 
 3- CELINE
 product.js :
-	- function getRandProduct() : stock un produit aléatoire
-	- function checkPrice(String) : param "+" ou "-", compare le prix réel au faux prix au param "+" ou "-"
-	- function displayProduct(Boolean) : affiche ou pas le produit selectionné
+	x function getRandProduct() : stock un produit aléatoire
+	x function checkPrice(String) : param "+" ou "-", compare le prix réel au faux prix au param "+" ou "-"
+	x function displayProduct(Boolean) : affiche ou pas le produit selectionné
 
-	creer des exemples de produits dans le data.js.
-	faire les fonctions dans product.js ( placement de l'objet dans le jeu, et affichage du prix)
-	tester en utilisant le fichier game.js avec le createGame.
+	x creer des exemples de produits dans le data.js.
+	x faire les fonctions dans product.js ( placement de l'objet dans le jeu, et affichage du prix)
+	x tester en utilisant le fichier game.js avec le createGame.
 
-
-	retailler les photos
-	placer image dans acsenseur
-	nom produit au dessus de la photo
-	photo
-	prix estimé:2€
-	ce produit vaut il plus ou moins?
-	checkprice fonctionnel
+	x retailler les photos
+	x placer image dans acsenseur
+	x nom produit au dessus de la photo
+	x photo
+	x prix estimé:2€
+	x ce produit vaut il plus ou moins?
+	x checkprice fonctionnel
 	
 
 4- VALENTIN

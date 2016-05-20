@@ -18,7 +18,9 @@ function createGame() {
 	setEventClickButtonLess(onClickLess);
 	setEventClickButtonMore(onClickMore);
 	
-	displayProduct(products[1]);
+	randomProduct();
+    displayProduct(products[product.name]); 
+    checkPrice();
 }
 
 /*
