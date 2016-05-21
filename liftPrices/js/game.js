@@ -6,8 +6,7 @@ function createGame() {
 	//game.input.onTap.add(test);
 	//PLACEMENT DE LASCENSEUR
 	var paramLift = [314,443,314,443,743,443,0,0,1387,850,1387,1000];
-	createLift(paramLift);
-
+	createLift(paramLift);	
 
 	setTargetFloor(5);
 
@@ -18,9 +17,8 @@ function createGame() {
 	setEventClickButtonLess(onClickLess);
 	setEventClickButtonMore(onClickMore);
 	
-	randomProduct();
-    displayProduct(products[product.name]); 
-    checkPrice();
+	var productChoose = randomProduct();
+	displayProduct(productChoose);
 }
 
 /*
