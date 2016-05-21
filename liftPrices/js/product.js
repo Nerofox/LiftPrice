@@ -21,15 +21,13 @@ function randomProduct() {
 //Boolean moreOrLess = choix de l'utilisateur
 //doit retourner un Boolean
 function checkPrice(moreOrLess){
-    if (product.realPrice < product.wrongPrice) {
-        moreOrLess = false;
-    }else if (product.realPrice > product.wrongPrice){
-        moreOrLess = true;
-    }
-    if (moreOrLess == false){
-    console.log('bouh');
+    if ((product.realPrice < product.wrongPrice) && (moreOrLess==false)){
+        return true;
+    }else if ((product.realPrice > product.wrongPrice)&&(moreOrLess==true)){
+        return true;
     }else{
-    console.log('grr');
+        return false;
     }
+    
  }
 

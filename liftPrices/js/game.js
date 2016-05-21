@@ -19,6 +19,7 @@ function createGame() {
 	
 	var productChoose = randomProduct();
 	displayProduct(productChoose);
+    
 }
 
 /*
