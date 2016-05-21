@@ -13,10 +13,10 @@ function createGame() {
 	var productChoose = randomProduct();
 	displayProduct(productChoose);
 	createLift(paramLift);	
-	doorLift(true);
+	//doorLift(true);
 	displayFloor(true);
-	setEventClickButtonLess(onClickLess);
-	setEventClickButtonMore(onClickMore);
+
+	//celine fais tes tests de displayWin etc juste en dessous de ce commentaire
 }
 
 /*

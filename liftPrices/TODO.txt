@@ -3,13 +3,13 @@
 
 2- VALENTIN
 lift.js :
-	- Mise en place des éléments (porte devant le produit, texte etc).
-	- Creation des evenements
+	x Mise en place des éléments (porte devant le produit, texte etc).
+	x Creation des evenements
 	x function createLift() : crée l'ascenseur
 	x function doorLift(Boolean) : vraix ouvre les portes, faux ferme les portes
 	x function upFloor() : change d'étage
-	- function up() : Bouton plus de l'ascenseur
-	- function down() : Bouton moins de l'ascenseur
+	x function up() : Bouton plus de l'ascenseur
+	x function down() : Bouton moins de l'ascenseur
 
 3- CELINE
 product.js :
@@ -32,7 +32,15 @@ product.js :
 
 4- VALENTIN
 game.js :
+	x Creation de la mécanique de jeu et évènement
 	- function winFloor() : quand on gagne sur l'étage
 	- function looseFloor()	: quand on perd
 	- function gameWin() : gagne la partie et indique a idol qu'on a gagné un prix
 	- function gameLoose() : perd la partie
+
+5 - CELINE
+status.js :
+	- function displayWinGame(Boolean) Boolean true = affiche, false = desactive (utilise methode destroy pour cela, voir le lift.js)
+	- function displayWin(Boolean)
+	- function displayLoose(Boolean)
+	- function displayLooseGame(Boolean);	
