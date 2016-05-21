@@ -18,6 +18,17 @@ function addFloor() {
 }
 
 /*
+ * Vérifie si dernié étage atteint
+ */
+function checkFloor() {
+	if (currentFloor == targetFloor)
+		return true;
+	else
+		return false;
+} 
+
+
+/*
  * Active/Desactive l'affichage du score d'étage
  * @param bool : 
  */

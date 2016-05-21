@@ -1,59 +1,81 @@
+var winOrLoose;
 
 /**
  * Fonction de lancement de la création du jeu
  */
 function createGame() {
 	//game.input.onTap.add(test);
-	//PLACEMENT DE LASCENSEUR
+	//PLACEMENT DE LASCENSEUR ET PARAMETRAGE
 	var paramLift = [314,443,314,443,743,443,0,0,1387,850,1387,1000];
 	createLift(paramLift);	
-
 	setTargetFloor(5);
 
+	//LANCEMENT
+	selectProduct();
 	doorLift(true);
 	displayFloor(true);
+}
 
+/*
+ * Manipule le jeu proclame la fin de partie
+ */
+function resolveGame(moreOrLess) {
+	winOrLoose = checkPrice(moreOrLess);
+	//si réussi
+	if (winOrLoose) {
+		//TODO faire win message
+		addFloor();
+	} else { //si échoue
+		//TODO faire défaite message
+	}
+	doorLift(false, finishDoor);
+}
+
+
+
+/*
+ * Choisi un produit au hasard et l'affiche
+ */
+function selectProduct() {
 	//MISE EN PLACE DES EVENEMENTS DES BOUTONS
 	setEventClickButtonLess(onClickLess);
 	setEventClickButtonMore(onClickMore);
 	
 	var productChoose = randomProduct();
 	displayProduct(productChoose);
-    
 }
 
 /*
  * Declenché quand le bouton moins est cliqué
  */
 function onClickLess() {
-	alert("less");
-    checkPrice(false);
-    
+    resolveGame(false);
 }
 
 /*
  * Declenché quand le bouton plus est cliqué
  */
 function onClickMore() {
-	alert("more");
-    checkPrice(true);
-}
-
-
-//UTILISER A FIN DE TEST A SUPPRIMER
-var testParam = true;
-function test() {
-	displayFloor(false);
-	doorLift(false, finishDoor);
+    resolveGame(true);
 }
 
 //Appellée une fois l'animation des portes effectuées
 function finishDoor() {
-	upFloor(finishUpFloor);
+	selectProduct();
+	if (winOrLoose) {
+		displayFloor(false);
+		upFloor(finishUpFloor);
+	} else {
+		doorLift(true);
+	}
 }
 
 //Appellée une fois l'animation de l'étage effectuée
 function finishUpFloor() {
+	//si on a atteint le dernié étage
+	if (checkFloor()) {
+		//TODO bravo c'est gagné
+	}
 	doorLift(true);
 	displayFloor(true);
 }

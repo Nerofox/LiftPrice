@@ -14,7 +14,7 @@
     },
       
     {
-        "name" : "lait",
+        "name" : "Pack de lait",
         "img": "param/img/product/lait.png",
         "realPrice" : 1.10,
         "wrongPrice" : 0.85
