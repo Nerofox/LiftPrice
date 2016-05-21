@@ -7,13 +7,16 @@ function createGame() {
 	//game.input.onTap.add(test);
 	//PLACEMENT DE LASCENSEUR ET PARAMETRAGE
 	var paramLift = [314,443,314,443,743,443,0,0,1387,850,1387,1000];
-	createLift(paramLift);	
 	setTargetFloor(5);
 
 	//LANCEMENT
-	selectProduct();
+	var productChoose = randomProduct();
+	displayProduct(productChoose);
+	createLift(paramLift);	
 	doorLift(true);
 	displayFloor(true);
+	setEventClickButtonLess(onClickLess);
+	setEventClickButtonMore(onClickMore);
 }
 
 /*
@@ -37,10 +40,6 @@ function resolveGame(moreOrLess) {
  * Choisi un produit au hasard et l'affiche
  */
 function selectProduct() {
-	//MISE EN PLACE DES EVENEMENTS DES BOUTONS
-	setEventClickButtonLess(onClickLess);
-	setEventClickButtonMore(onClickMore);
-	
 	var productChoose = randomProduct();
 	displayProduct(productChoose);
 }

@@ -37,6 +37,16 @@ function createLift(paramXY) {
 	buttonLess.animations.play("buttonLessAnim",5,true);
 	buttonLess.inputEnabled = true;
 	buttonMore.inputEnabled = true;
+	//placement des plans pour que les produits soient dérrière les portes
+	bringProductToTop();
+	game.world.bringToTop(leftDoor);
+	game.world.bringToTop(rightDoor);
+	game.world.bringToTop(outSide);
+	game.world.bringToTop(buttonMore);
+	game.world.bringToTop(buttonLess);
+	//MISE EN PLACE DES EVENEMENTS DES BOUTONS
+	setEventClickButtonLess(onClickLess);
+	setEventClickButtonMore(onClickMore);
 }
 
 /**
@@ -121,6 +131,11 @@ function upFloor(functionCall = null) {
 	tempRightDoor.body.velocity.y = speedUpFloor;
 	tempButtonMore.body.velocity.y = speedUpFloor;
 	tempButtonLess.body.velocity.y = speedUpFloor;
+	game.world.bringToTop(tempLeftDoor);
+	game.world.bringToTop(tempRightDoor);
+	game.world.bringToTop(tempOutSide);
+	game.world.bringToTop(tempButtonMore);
+	game.world.bringToTop(tempButtonLess);
 	outSide.body.velocity.y = speedUpFloor;
 	inSide.body.velocity.y = speedUpFloor;
 	leftDoor.body.velocity.y = speedUpFloor;
