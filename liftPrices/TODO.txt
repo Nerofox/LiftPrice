@@ -40,7 +40,7 @@ game.js :
 
 5 - CELINE
 status.js :
-	- function displayWinGame(Boolean) Boolean true = affiche, false = desactive (utilise methode destroy pour cela, voir le lift.js)
-	- function displayWin(Boolean)
-	- function displayLoose(Boolean)
-	- function displayLooseGame(Boolean);	
+	x function displayWinGame(Boolean) Boolean true = affiche, false = desactive (utilise methode destroy pour cela, voir le lift.js)
+	x function displayWin(Boolean)
+	x function displayLoose(Boolean)
+	x function displayLooseGame(Boolean);	

@@ -17,7 +17,12 @@ function createGame() {
 	displayFloor(true);
 
 	//celine fais tes tests de displayWin etc juste en dessous de ce commentaire
+    displayWinGame(true);
+    displayWin(false);
+    displayLooseGame(false);
+    displayLoose(false);
 }
+
 
 /*
  * Manipule le jeu proclame la fin de partie

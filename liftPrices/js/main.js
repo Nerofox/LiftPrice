@@ -22,7 +22,7 @@ function preload() {
     for(i=0; i<products.length; i++){
         game.load.image(products[i].name, products[i].img);
     }
- 
+    game.load.image("finish", "param/img/finish.png");
 	//------------IMAGE DE BASE DES BOUTONS--------------
 	game.load.atlas("buttonMore", "param/img/lift/buttonMore.png", "js/spriteConf/button.json");
 	game.load.atlas("buttonLess", "param/img/lift/buttonLess.png", "js/spriteConf/button.json");
