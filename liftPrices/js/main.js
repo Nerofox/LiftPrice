@@ -1,9 +1,10 @@
 var game;
-
+var paramGame;
 
 startGame(context);//A SUPPRIMER FRAMEWORK DOLMEN LE LANCERA
 
 function startGame(param) {
+	paramGame = param;
 	//CHARGEMENT DES PRODUITS PUIS LANCEMENT DU JEUX
 	$.getJSON( "param/products.json", function( data ) {
 		products = data;

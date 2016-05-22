@@ -7,5 +7,5 @@
 
 var context = {
     "life" : 3,
-    "floor" : 4
+    "floor" : 2
 }

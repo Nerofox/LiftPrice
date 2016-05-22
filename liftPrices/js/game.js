@@ -7,20 +7,14 @@ function createGame() {
 	//game.input.onTap.add(test);
 	//PLACEMENT DE LASCENSEUR ET PARAMETRAGE
 	var paramLift = [314,443,314,443,743,443,0,0,1387,850,1387,1000];
-	setTargetFloor(5);
+	setTargetFloor(paramGame.floor);
 
 	//LANCEMENT
 	var productChoose = randomProduct();
 	displayProduct(productChoose);
 	createLift(paramLift);	
-	//doorLift(true);
+	doorLift(true);
 	displayFloor(true);
-
-	//celine fais tes tests de displayWin etc juste en dessous de ce commentaire
-    displayWinGame(true);
-    displayWin(false);
-    displayLooseGame(false);
-    displayLoose(false);
 }
 
 
@@ -31,10 +25,7 @@ function resolveGame(moreOrLess) {
 	winOrLoose = checkPrice(moreOrLess);
 	//si réussi
 	if (winOrLoose) {
-		//TODO faire win message
 		addFloor();
-	} else { //si échoue
-		//TODO faire défaite message
 	}
 	doorLift(false, finishDoor);
 }
@@ -65,21 +56,32 @@ function onClickMore() {
 
 //Appellée une fois l'animation des portes effectuées
 function finishDoor() {
+	//on vérifie si on a gagné
+	if (checkWin()) {
+		displayWinGame(true);
+		return;
+	}	
+	//sinon on continue
 	selectProduct();
 	if (winOrLoose) {
-		displayFloor(false);
-		upFloor(finishUpFloor);
+		displayWin(true);
+		setTimeout(function() {
+			displayFloor(false);
+			displayWin(false);
+			upFloor(finishUpFloor);
+		}, 2000);
 	} else {
-		doorLift(true);
+		displayLoose(true);
+		setTimeout(function() {
+			displayLoose(false);
+			doorLift(true);
+		}, 2000);
 	}
 }
 
 //Appellée une fois l'animation de l'étage effectuée
 function finishUpFloor() {
 	//si on a atteint le dernié étage
-	if (checkFloor()) {
-		//TODO bravo c'est gagné
-	}
 	doorLift(true);
 	displayFloor(true);
 }

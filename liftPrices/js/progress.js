@@ -18,10 +18,10 @@ function addFloor() {
 }
 
 /*
- * Vérifie si dernié étage atteint
+ * Vérifie si gagnant
  */
-function checkFloor() {
-	if (currentFloor == targetFloor)
+function checkWin() {
+	if (currentFloor == targetFloor + 1)
 		return true;
 	else
 		return false;
@@ -34,12 +34,8 @@ function checkFloor() {
  */
 function displayFloor(bool) {
 	if (bool) {
-		if (scoreText != null)
-			scoreText.text = currentFloor + " / " + targetFloor;
-		else {
-			scoreText = game.add.text(650, 100, currentFloor + " / " + targetFloor, { font: "100px Arial", fill: "#00D700" });
-			scoreText.x = game.width / 2 - scoreText.width / 2;
-		}
+		scoreText = game.add.text(650, 100, currentFloor + " / " + targetFloor, { font: "100px Arial", fill: "#00D700" });
+		scoreText.x = game.width / 2 - scoreText.width / 2;
 	} else {
 		scoreText.destroy();
 		scoreText = null;

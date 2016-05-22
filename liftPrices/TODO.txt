@@ -21,19 +21,13 @@ product.js :
 	x faire les fonctions dans product.js ( placement de l'objet dans le jeu, et affichage du prix)
 	x tester en utilisant le fichier game.js avec le createGame.
 
-	x retailler les photos
-	x placer image dans acsenseur
-	x nom produit au dessus de la photo
-	x photo
-	x prix estimé:2€
-	x ce produit vaut il plus ou moins?
-	x checkprice fonctionnel
+	x placement éléments produits
 	
 
 4- VALENTIN
 game.js :
 	x Creation de la mécanique de jeu et évènement
-	- function winFloor() : quand on gagne sur l'étage
+	x function winFloor() : quand on gagne sur l'étage
 	- function looseFloor()	: quand on perd
 	- function gameWin() : gagne la partie et indique a idol qu'on a gagné un prix
 	- function gameLoose() : perd la partie

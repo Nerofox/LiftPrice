@@ -44,9 +44,6 @@ function createLift(paramXY) {
 	game.world.bringToTop(outSide);
 	game.world.bringToTop(buttonMore);
 	game.world.bringToTop(buttonLess);
-	//MISE EN PLACE DES EVENEMENTS DES BOUTONS
-	setEventClickButtonLess(onClickLess);
-	setEventClickButtonMore(onClickMore);
 }
 
 /**
@@ -65,6 +62,14 @@ function setEventClickButtonMore(listener) {
 	buttonMore.events.onInputDown.add(listener);
 }
 
+/**
+ * Supprime les évènements des boutons
+ */
+function removeEventClickButton() {
+	buttonMore.events.onInputDown.removeAll();
+	buttonLess.events.onInputDown.removeAll();
+}
+
 function updateLift() {
 	//gestion d'arrêt des mouvements des portes
 	if (lastParam == 1) {
@@ -73,16 +78,20 @@ function updateLift() {
 		if (leftDoor.body.x <= limitXLeft)
 			leftDoor.body.velocity.x = 0;
 		//appel fonction si demandée
-		if (rightDoor.body.x >= limitXRight && leftDoor.body.x <= limitXLeft && finishFunction != null)
+		if (rightDoor.body.x >= limitXRight && leftDoor.body.x <= limitXLeft && finishFunction != null) {
 			finishFunction();
+			finishFunction = null;
+		}
 	} else if (lastParam === 0) {
 		if (rightDoor.body.x <= limitXRight)
 			rightDoor.body.velocity.x = 0;
 		if (leftDoor.body.x >= limitXLeft)
 			leftDoor.body.velocity.x = 0;
 		//appel fonction si demandée
-		if (rightDoor.body.x <= limitXRight && leftDoor.body.x >= limitXLeft && finishFunction != null)
+		if (rightDoor.body.x <= limitXRight && leftDoor.body.x >= limitXLeft && finishFunction != null) {
 			finishFunction();
+			finishFunction = null;
+		}
 	//gestion d'arrêt d'étage arrêt de l'ascenseur une fois atteint la valeur la plus haute
 	} else if (lastParam == 2) { 
 		if (outSide.body.y >= 0) {
@@ -102,8 +111,10 @@ function updateLift() {
 			tempButtonMore.destroy();
 			lastParam = null;
 			//sortie
-			if (finishFunction != null)
+			if (finishFunction != null) {
 				finishFunction();
+				finishFunction = null;
+			}
 		}
 	}
 }
@@ -153,6 +164,9 @@ function doorLift(openOrClose, functionCall = null) {
 	//sauvegarde de la fonctiona lancer une fois l'opération effectuée
 	finishFunction = functionCall;
 	if (openOrClose == true) {
+		//MISE EN PLACE DES EVENEMENTS DES BOUTONS
+		setEventClickButtonLess(onClickLess);
+		setEventClickButtonMore(onClickMore);
 		lastParam = 1;
 		//porte droite
 		rightDoor.body.velocity.x = 800;
@@ -161,6 +175,7 @@ function doorLift(openOrClose, functionCall = null) {
 		leftDoor.body.velocity.x = -800;
 		limitXLeft = -100;
 	} else {
+		removeEventClickButton();
 		lastParam = 0;
 		//porte droite
 		rightDoor.body.velocity.x = -800;
