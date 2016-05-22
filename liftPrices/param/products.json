@@ -25,5 +25,55 @@
         "img" : "param/img/product/pain.png",
         "realPrice" : 0.85,
         "wrongPrice" : 0.50
+    },
+    
+    {
+        "name" : "eau",
+        "img": "param/img/product/eau.png",
+        "realPrice": 2.82,
+        "wrongPrice": 2.50
+    },
+    
+    {
+        "name" : "saucisse",
+        "img": "param/img/product/saucisse.png",
+        "realPrice": 2.30,
+        "wrongPrice": 3.00
+    },
+
+    {
+        "name" : "brioche",
+        "img": "param/img/product/pitch.png",
+        "realPrice": 1.30,
+        "wrongPrice": 1.80
+    },
+    
+    {
+        "name" : "chocolat",
+        "img": "param/img/product/chocolat.png",
+        "realPrice": 1.20,
+        "wrongPrice": 1.00
+    },
+    
+    {
+        "name" : "beurre",
+        "img": "param/img/product/beurre.png",
+        "realPrice": 3.20,
+        "wrongPrice": 2.50
+    },
+    
+    {
+        "name" : "jus",
+        "img": "param/img/product/jus.png",
+        "realPrice": 1.75,
+        "wrongPrice": 2.00
+    },
+    
+    {
+        "name" : "alu",
+        "img": "param/img/product/alu.png",
+        "realPrice": 3.00,
+        "wrongPrice": 2.75
     }
+
 ]
