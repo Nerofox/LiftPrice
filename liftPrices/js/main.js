@@ -43,13 +43,14 @@ function preload() {
 	game.load.audio("gameLostSong", "param/song/gameLost.mp3");
 	game.load.audio("winSong", "param/song/win.wav");
 	game.load.audio("looseSong", "param/song/loose.wav");
-	game.load.audio("ambiance", "param/song/zic.wav");
+	game.load.audio("ambiance", "param/song/zic.mp3");
 }
 
 //LANCEMENT DE LA CREATION DU JEU
 function create() {
 	//lancement musique
 	songAmbiance = game.add.audio("ambiance");
+	songAmbiance.loop = true;
 	songAmbiance.play();
 	//creation des sons
 	songLiftOpen = game.add.audio("liftOpen");
