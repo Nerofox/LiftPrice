@@ -1,6 +1,14 @@
 var game;
 var paramGame;
 
+//sons
+var songLiftOpen;
+var songLiftClose;
+var songLiftUpside;
+var songGameWin; var songGameLoose;
+var songWin; var songLoose;
+var songAmbiance;
+
 startGame(context);//A SUPPRIMER FRAMEWORK DOLMEN LE LANCERA
 
 function startGame(param) {
@@ -23,14 +31,35 @@ function preload() {
     for(i=0; i<products.length; i++){
         game.load.image(products[i].name, products[i].img);
     }
-    game.load.image("finish", "param/img/finish.png");
 	//------------IMAGE DE BASE DES BOUTONS--------------
 	game.load.atlas("buttonMore", "param/img/lift/buttonMore.png", "js/spriteConf/button.json");
 	game.load.atlas("buttonLess", "param/img/lift/buttonLess.png", "js/spriteConf/button.json");
+	game.load.image("finish", "param/img/finish.png");
+	//------------SON DU JEU------------------------------
+	game.load.audio("liftOpen", "param/song/lift_open.ogg");
+	game.load.audio("liftClose", "param/song/lift_close.ogg");
+	game.load.audio("liftUp", "param/song/lift_upside.ogg");
+	game.load.audio("gameWinSong", "param/song/gameWin.wav");
+	game.load.audio("gameLostSong", "param/song/gameLost.mp3");
+	game.load.audio("winSong", "param/song/win.wav");
+	game.load.audio("looseSong", "param/song/loose.wav");
+	game.load.audio("ambiance", "param/song/zic.wav");
 }
 
 //LANCEMENT DE LA CREATION DU JEU
 function create() {
+	//lancement musique
+	songAmbiance = game.add.audio("ambiance");
+	songAmbiance.play();
+	//creation des sons
+	songLiftOpen = game.add.audio("liftOpen");
+	songLiftClose = game.add.audio("liftClose");
+	songLiftUpside = game.add.audio("liftUp");
+	songGameWin = game.add.audio("gameWinSong");
+	songLoose = game.add.audio("looseSong");
+	songGameLoose = game.add.audio("gameLostSong");
+	songWin = game.add.audio("winSong");
+
 	createGame();
 }
 

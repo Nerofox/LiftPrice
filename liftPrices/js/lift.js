@@ -8,6 +8,7 @@ var buttonLess; var tempButtonLess;
 var limitXLeft = 314;
 var limitXRight = 743;
 var speedUpFloor = 1000;
+var speedUpDoor = 180;
 
 var lastParam; //0 - fermeture, 1 - ouverture, 2 - changement étage
 var finishFunction; //fonction a apppeler a l'extérieur
@@ -169,19 +170,19 @@ function doorLift(openOrClose, functionCall = null) {
 		setEventClickButtonMore(onClickMore);
 		lastParam = 1;
 		//porte droite
-		rightDoor.body.velocity.x = 800;
+		rightDoor.body.velocity.x = speedUpDoor;
 		limitXRight = 1162;
 		//porte gauche
-		leftDoor.body.velocity.x = -800;
+		leftDoor.body.velocity.x = 0-speedUpDoor;
 		limitXLeft = -100;
 	} else {
 		removeEventClickButton();
 		lastParam = 0;
 		//porte droite
-		rightDoor.body.velocity.x = -800;
+		rightDoor.body.velocity.x = 0-speedUpDoor;
 		limitXRight = 743
 		//porte gauche
-		leftDoor.body.velocity.x = 800;
+		leftDoor.body.velocity.x = speedUpDoor;
 		limitXLeft = 314;
 	}
 }

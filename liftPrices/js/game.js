@@ -12,9 +12,12 @@ function createGame() {
 	//LANCEMENT
 	var productChoose = randomProduct();
 	displayProduct(productChoose);
-	createLift(paramLift);	
-	doorLift(true);
-	displayFloor(true);
+	createLift(paramLift);
+	songLiftOpen.play();
+	setTimeout(function() {
+		doorLift(true);
+		displayFloor(true);
+	}, 1000);
 }
 
 
@@ -27,6 +30,7 @@ function resolveGame(moreOrLess) {
 	if (winOrLoose) {
 		addFloor();
 	}
+	songLiftClose.play();
 	doorLift(false, finishDoor);
 }
 
@@ -59,22 +63,30 @@ function finishDoor() {
 	//on vérifie si on a gagné
 	if (checkWin()) {
 		displayWinGame(true);
+		songAmbiance.stop();
+		songGameWin.play();
 		return;
 	}	
 	//sinon on continue
 	selectProduct();
 	if (winOrLoose) {
+		songWin.play();
 		displayWin(true);
 		setTimeout(function() {
+			songLiftUpside.play();
 			displayFloor(false);
 			displayWin(false);
 			upFloor(finishUpFloor);
 		}, 2000);
 	} else {
+		songLoose.play();
 		displayLoose(true);
 		setTimeout(function() {
 			displayLoose(false);
-			doorLift(true);
+			songLiftOpen.play();
+			setTimeout(function() {
+				doorLift(true);
+			}, 1000);
 		}, 2000);
 	}
 }
@@ -82,6 +94,9 @@ function finishDoor() {
 //Appellée une fois l'animation de l'étage effectuée
 function finishUpFloor() {
 	//si on a atteint le dernié étage
-	doorLift(true);
 	displayFloor(true);
+	songLiftOpen.play();
+	setTimeout(function() {
+		doorLift(true);
+	},1000);	
 }
