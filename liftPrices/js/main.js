@@ -35,6 +35,7 @@ function preload() {
 	game.load.atlas("buttonMore", "param/img/lift/buttonMore.png", "js/spriteConf/button.json");
 	game.load.atlas("buttonLess", "param/img/lift/buttonLess.png", "js/spriteConf/button.json");
 	game.load.image("finish", "param/img/finish.png");
+    game.load.image("finshLoose", "param/img/finishLoose.png");
 	//------------SON DU JEU------------------------------
 	game.load.audio("liftOpen", "param/song/lift_open.ogg");
 	game.load.audio("liftClose", "param/song/lift_close.ogg");

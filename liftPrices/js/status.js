@@ -50,6 +50,7 @@ function displayLooseGame(display) {
         displayGameLoose= game.add.text(350, 1000, "Désolé, vous avez perdu !" ,{ font: "100px Arial", fill: "#FF0000"}); 
         displayGameLoose.x = game.width/2 - displayGameLoose.width/2 - 45;
         displayGameLoose.visibility;
+        displayImg = game.add.sprite(500,1200, "finishLoose");
     }else{
         displayGameLoose.destroy();
     }
