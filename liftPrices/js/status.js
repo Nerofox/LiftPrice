@@ -33,6 +33,7 @@ function displayWin(display) {
  */
 function displayLoose(display) {
     if (display == true){
+        //looseLife();
         displayLooseFloor = game.add.text(350, 1000, "Désolé, réessayez " ,{ font: "100px Arial", fill: "#FF0000"}); 
         displayLooseFloor.x = game.width/2 - displayLooseFloor.width/2 - 10;
         displayLooseFloor.visibility;

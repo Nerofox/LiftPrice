@@ -17,8 +17,11 @@ function createGame() {
 	setTimeout(function() {
 		doorLift(true);
 		displayFloor(true);
+        displayLife(true);
 	}, 1000);
 }
+
+
 
 
 /*
