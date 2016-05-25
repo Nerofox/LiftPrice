@@ -8,7 +8,7 @@ function setLife(nb) {
 
 function displayLife(bool){
     if (bool){
-        displayLives = game.add.text(90, 80, life,{ font: "100px Arial", fill: "#FFFFFF"});
+        displayLives = game.add.text(115, 80, life,{ font: "100px Arial", fill: "#FFFFFF"});
     }else{
         displayLives.destroy();
         displayLives = null;

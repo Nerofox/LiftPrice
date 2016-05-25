@@ -6,6 +6,6 @@
  */
 
 var context = {
-    "life" : 3,
+    "life" : 2,
     "floor" : 2
 }

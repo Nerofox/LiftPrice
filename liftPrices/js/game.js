@@ -8,6 +8,7 @@ function createGame() {
 	//PLACEMENT DE LASCENSEUR ET PARAMETRAGE
 	var paramLift = [314,443,314,443,743,443,0,0,1387,850,1387,1000];
 	setTargetFloor(paramGame.floor);
+	setLife(paramGame.life);
 
 	//LANCEMENT
 	var productChoose = randomProduct();
@@ -17,12 +18,9 @@ function createGame() {
 	setTimeout(function() {
 		doorLift(true);
 		displayFloor(true);
-        displayLife(true);
+		displayLife(true);
 	}, 1000);
 }
-
-
-
 
 /*
  * Manipule le jeu proclame la fin de partie
@@ -32,6 +30,10 @@ function resolveGame(moreOrLess) {
 	//si réussi
 	if (winOrLoose) {
 		addFloor();
+	} else { //si perdu
+		removeLife();
+		displayLife(false);
+		displayLife(true);
 	}
 	songLiftClose.play();
 	doorLift(false, finishDoor);
@@ -63,13 +65,20 @@ function onClickMore() {
 
 //Appellée une fois l'animation des portes effectuées
 function finishDoor() {
-	//on vérifie si on a gagné
+	//on vérifie si on a gagné la partie
 	if (checkWin()) {
 		displayWinGame(true);
 		songAmbiance.stop();
 		songGameWin.play();
 		return;
-	}	
+	} //ou si perdu la partie
+	else if (checkLoose()) {
+		displayLooseGame(true);
+		songAmbiance.stop();
+		songGameLoose.play();
+		return;
+	}
+
 	//sinon on continue
 	selectProduct();
 	if (winOrLoose) {
@@ -78,6 +87,7 @@ function finishDoor() {
 		setTimeout(function() {
 			songLiftUpside.play();
 			displayFloor(false);
+			displayLife(false);
 			displayWin(false);
 			upFloor(finishUpFloor);
 		}, 2000);
@@ -98,6 +108,7 @@ function finishDoor() {
 function finishUpFloor() {
 	//si on a atteint le dernié étage
 	displayFloor(true);
+	displayLife(true);
 	songLiftOpen.play();
 	setTimeout(function() {
 		doorLift(true);
