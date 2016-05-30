@@ -1,4 +1,4 @@
-﻿1- CELINE
+1- CELINE
 	x Création éléments graphiques (coeur pour les vies ,numéro d'étage ,ascenseur plus mur, intérieur d'ascenseur, porte, bouton plus et moins).
 
 2- VALENTIN
@@ -22,15 +22,16 @@ product.js :
 	x tester en utilisant le fichier game.js avec le createGame.
 
 	x placement éléments produits
+	- randomProduct : sortie des produits de manière aléatoire mais pas 2 fois le même
 	
 
 4- VALENTIN
 game.js :
 	x Creation de la mécanique de jeu et évènement
 	x function winFloor() : quand on gagne sur l'étage
-	- function looseFloor()	: quand on perd
-	- function gameWin() : gagne la partie et indique a idol qu'on a gagné un prix
-	- function gameLoose() : perd la partie
+	x function looseFloor()	: quand on perd
+	x function gameWin() : gagne la partie et indique a idol qu'on a gagné un prix
+	x function gameLoose() : perd la partie
 
 5 - CELINE
 status.js :

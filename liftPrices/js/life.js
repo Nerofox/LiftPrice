@@ -17,7 +17,7 @@ function displayLife(bool){
 
 
 function removeLife(){
-    life --;
+    life--;
     return life;
 }
 

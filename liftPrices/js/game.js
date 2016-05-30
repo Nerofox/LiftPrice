@@ -32,8 +32,6 @@ function resolveGame(moreOrLess) {
 		addFloor();
 	} else { //si perdu
 		removeLife();
-		displayLife(false);
-		displayLife(true);
 	}
 	songLiftClose.play();
 	doorLift(false, finishDoor);
@@ -63,17 +61,36 @@ function onClickMore() {
     resolveGame(true);
 }
 
+/*
+ * Déclenché si bouton terminé perdu cliqué 
+ */
+ function onClickWinGame() {
+ 	iDol.output('module_output_event', outputWin);
+ }
+
+ /*
+ * Déclenché si bouton terminé gagné cliqué 
+ */
+ function onClickLooseGame() {
+ 	iDol.output('module_output_event', outputLoose);
+ }
+
 //Appellée une fois l'animation des portes effectuées
 function finishDoor() {
+	displayLife(false);
+	displayLife(true);
+
 	//on vérifie si on a gagné la partie
 	if (checkWin()) {
 		displayWinGame(true);
+		setActionFinish(onClickWinGame);
 		songAmbiance.stop();
 		songGameWin.play();
 		return;
 	} //ou si perdu la partie
 	else if (checkLoose()) {
 		displayLooseGame(true);
+		setActionFinish(onClickLooseGame);
 		songAmbiance.stop();
 		songGameLoose.play();
 		return;
