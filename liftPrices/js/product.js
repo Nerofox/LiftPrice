@@ -38,6 +38,7 @@ function randomProduct() {
     var tmpProduct = Object.keys(products);
     var randomPropertyName = tmpProduct[ Math.floor(Math.random()*tmpProduct.length) ];
     product = products[randomPropertyName];
+    delete products[randomPropertyName] ;  
     return product;
 }
 

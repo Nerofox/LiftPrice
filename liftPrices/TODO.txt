@@ -16,7 +16,6 @@ product.js :
 	x function getRandProduct() : stock un produit aléatoire
 	x function checkPrice(String) : param "+" ou "-", compare le prix réel au faux prix au param "+" ou "-"
 	x function displayProduct(Boolean) : affiche ou pas le produit selectionné
-
 	x creer des exemples de produits dans le data.js.
 	x faire les fonctions dans product.js ( placement de l'objet dans le jeu, et affichage du prix)
 	x tester en utilisant le fichier game.js avec le createGame.
@@ -38,3 +37,4 @@ status.js :
 	x function displayWin(Boolean)
 	x function displayLoose(Boolean)
 	x function displayLooseGame(Boolean);	
+	x modifier function random();
