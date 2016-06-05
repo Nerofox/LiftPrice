@@ -20,7 +20,7 @@ function startModule(param)
 	//Do something
 	
 	iDol.output('module_output_event', outputParam);
-	startGame(param);
+	startGame(param); //lancement du jeux 
 }
 
 /**
@@ -34,7 +34,7 @@ function reStartModule(param)
 	
 	//Do something
 	
-	iDol.output('module_output_event', outputParam);
+	startGame(param);
 
 }
 

@@ -55,3 +55,8 @@ function displayLooseGame(display) {
         displayGameLoose.destroy();
     }
 }
+
+function setActionFinish(listen) {
+    displayImg.inputEnabled = true;
+    displayImg.events.onInputDown.add(listen);
+}
