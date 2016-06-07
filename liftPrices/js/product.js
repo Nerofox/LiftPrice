@@ -1,5 +1,7 @@
 var products; //contient les produits de base
 var product;
+var tmpRandProduct = new Array();
+
 var displayQuestion;
 var displayName;
 var displayImg;
@@ -35,10 +37,12 @@ function bringProductToTop() {
 }
 
 function randomProduct() {
-    var tmpProduct = Object.keys(products);
-    var randomPropertyName = tmpProduct[ Math.floor(Math.random()*tmpProduct.length) ];
-    product = products[randomPropertyName];
-    delete products[randomPropertyName] ;  
+    if (tmpRandProduct.length == 0) {
+        for(i = 0; i < products.length; i++)
+            tmpRandProduct.push(products[i]);
+        shuffle(tmpRandProduct);
+    }
+    product = tmpRandProduct.pop();
     return product;
 }
 
@@ -48,11 +52,26 @@ function randomProduct() {
 function checkPrice(moreOrLess){
     if ((product.realPrice < product.wrongPrice) && (moreOrLess==false)){
         return true;
-    }else if ((product.realPrice > product.wrongPrice)&&(moreOrLess==true)){
+    } else if ((product.realPrice > product.wrongPrice)&&(moreOrLess==true)) {
         return true;
-    }else{
+    } else {
         return false;
     }
-    
- }
+}
 
+//mélange les éléments d'un tableau donné
+function shuffle(a) {
+    var j = 0;
+    var valI = '';
+    var valJ = valI;
+    var l = a.length - 1;
+    while(l > -1) {
+        j = Math.floor(Math.random() * l);
+        valI = a[l];
+        valJ = a[j];
+        a[l] = valJ;
+        a[j] = valI;
+        l = l - 1;
+    }
+    return a;
+ }

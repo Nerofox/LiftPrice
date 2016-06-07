@@ -8,7 +8,7 @@
 //configuration du jeux, ajuster selon la difficultée choisie
 var context = {
     "life" : 3, //nombre d'éssai du joueur avant défaite 
-    "floor" : 3 //nombre d'étage à franchir pour gagner (nombre de niveau)
+    "floor" : 5 //nombre d'étage à franchir pour gagner (nombre de niveau)
 }
 
 var outputWin = 
@@ -19,8 +19,7 @@ var outputWin =
 	gift : "2", //dans notre exemple le produit avec l'id numéro 2 (dans le fichier products.json) sera le cadeau gagnant
 	restart: false,
 	validate: false,
-	answers:[
-	]
+	answers:[]
 }
 
 var outputLoose = 
@@ -31,6 +30,5 @@ var outputLoose =
 	gift : "LOST",
 	restart: false,
 	validate: false,
-	answers:[
-	]
+	answers:[]
 }

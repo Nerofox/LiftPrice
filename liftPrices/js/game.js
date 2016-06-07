@@ -37,8 +37,6 @@ function resolveGame(moreOrLess) {
 	doorLift(false, finishDoor);
 }
 
-
-
 /*
  * Choisi un produit au hasard et l'affiche
  */

@@ -9,7 +9,7 @@ var songGameWin; var songGameLoose;
 var songWin; var songLoose;
 var songAmbiance;
 
-startGame(context);//A SUPPRIMER FRAMEWORK DOLMEN LE LANCERA
+//startGame(context);//A COMMENTER FRAMEWORK DOLMEN LE LANCERA
 
 function startGame(param) {
 	paramGame = param;
@@ -28,7 +28,7 @@ function preload() {
 	game.load.image("leftDoor", "param/img/lift/leftDoor.png");
 	game.load.image("rightDoor", "param/img/lift/rightDoor.png");
     //------------IMAGE DES PRODUITS SAUVEGARDES-------------
-    for(i=0; i<products.length; i++){
+    for(i = 0; i < products.length; i++){
         game.load.image(products[i].name, products[i].img);
     }
 	//------------IMAGE DE BASE DES BOUTONS--------------
