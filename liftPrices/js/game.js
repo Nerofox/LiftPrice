@@ -16,7 +16,7 @@ function createGame() {
 	createLift(paramLift);
 	songLiftOpen.play();
 	setTimeout(function() {
-		doorLift(true);
+		doorLift(true, null);
 		displayFloor(true);
 		displayLife(true);
 	}, 1000);
@@ -113,7 +113,7 @@ function finishDoor() {
 			displayLoose(false);
 			songLiftOpen.play();
 			setTimeout(function() {
-				doorLift(true);
+				doorLift(true, null);
 			}, 1000);
 		}, 2000);
 	}
@@ -126,6 +126,6 @@ function finishUpFloor() {
 	displayLife(true);
 	songLiftOpen.play();
 	setTimeout(function() {
-		doorLift(true);
+		doorLift(true, null);
 	},1000);	
 }

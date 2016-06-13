@@ -123,9 +123,12 @@ function updateLift() {
 /**
  * Effectue l'animation du changement d'étage
  */
-function upFloor(functionCall = null) {
+function upFloor(functionCall) {
 	//sauvegarde de la fonctiona lancer une fois l'opération effectuée
-	finishFunction = functionCall;
+	if (functionCall != null)
+		finishFunction = functionCall;
+	else
+		finishFunction = null;
 	//sauvegarde des éléments actuels
 	tempOutSide = outSide;
 	tempInSide = inSide;
@@ -161,7 +164,11 @@ function upFloor(functionCall = null) {
  * Declenche animation ouvre et ferme la porte
  * @param Boolean openOrClose
  */
-function doorLift(openOrClose, functionCall = null) {
+function doorLift(openOrClose, functionCall) {
+	if (functionCall != null)
+		finishFunction = functionCall;
+	else
+		finishFunction = null;
 	//sauvegarde de la fonctiona lancer une fois l'opération effectuée
 	finishFunction = functionCall;
 	if (openOrClose == true) {
