@@ -16,7 +16,7 @@ function startGame(param) {
 	//CHARGEMENT DES PRODUITS PUIS LANCEMENT DU JEUX
 	$.getJSON( "param/products.json", function( data ) {
 		products = data;
-		game = new Phaser.Game(1536, 2048, Phaser.AUTO, "AscenseurDuPrix", { preload: preload, create: create, update: update });;
+		game = new Phaser.Game(1536, 2048, Phaser.CANVAS, "AscenseurDuPrix", { preload: preload, create: create, update: update });
 	});
 }
 
@@ -62,9 +62,27 @@ function create() {
 	songGameLoose = game.add.audio("gameLostSong");
 	songWin = game.add.audio("winSong");
 
+	adjust();
 	createGame();
 }
 
 function update() {
 	updateLift();
+}
+
+window.addEventListener('resize', function() {       
+	adjust();   
+});
+
+function adjust() {
+	var divgame = document.getElementById("AscenseurDuPrix");	
+	divgame.style.width = window.innerWidth + "px";	
+	divgame.style.height = window.innerHeight + "px";
+	console.log(divgame);	
+	game.input.maxPointers = 1;		
+	game.scale.scaleMode = Phaser.ScaleManager.SHOW_ALL;		
+	game.scale.pageAlignHorizontally = true;		
+	game.scale.pageAlignVertically = true;		
+	//game.scale.setScreenSize(true);        
+	game.scale.refresh();
 }
