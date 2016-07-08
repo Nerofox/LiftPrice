@@ -46,19 +46,6 @@ function randomProduct() {
     return product;
 }
 
-
-//Boolean moreOrLess = choix de l'utilisateur
-//doit retourner un Boolean
-function checkPrice(moreOrLess){
-    if ((product.realPrice < product.wrongPrice) && (moreOrLess==false)){
-        return true;
-    } else if ((product.realPrice > product.wrongPrice)&&(moreOrLess==true)) {
-        return true;
-    } else {
-        return false;
-    }
-}
-
 //mélange les éléments d'un tableau donné
 function shuffle(a) {
     var j = 0;
@@ -75,3 +62,15 @@ function shuffle(a) {
     }
     return a;
  }
+
+//Boolean moreOrLess = choix de l'utilisateur
+//doit retourner un Boolean
+function checkPrice(moreOrLess){
+    if ((product.realPrice < product.wrongPrice) && (moreOrLess==false)){
+        return true;
+    } else if ((product.realPrice > product.wrongPrice)&&(moreOrLess==true)) {
+        return true;
+    } else {
+        return false;
+    }
+}
